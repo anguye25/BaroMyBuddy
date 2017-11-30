@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3752CBD01FCF85980062DA97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752CBCF1FCF85980062DA97 /* AppDelegate.swift */; };
-		3752CBD21FCF85980062DA97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752CBD11FCF85980062DA97 /* ViewController.swift */; };
 		3752CBD51FCF85980062DA97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3752CBD31FCF85980062DA97 /* Main.storyboard */; };
 		3752CBD71FCF85980062DA97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3752CBD61FCF85980062DA97 /* Assets.xcassets */; };
 		3752CBDA1FCF85980062DA97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3752CBD81FCF85980062DA97 /* LaunchScreen.storyboard */; };
 		3752CBE51FCF85990062DA97 /* BaroMyBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752CBE41FCF85990062DA97 /* BaroMyBuddyTests.swift */; };
 		3752CBF01FCF85990062DA97 /* BaroMyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752CBEF1FCF85990062DA97 /* BaroMyBuddyUITests.swift */; };
+		37B830441FCFCBFF00BC1892 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B830431FCFCBFF00BC1892 /* OpeningViewController.swift */; };
+		37B830461FCFD2D700BC1892 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B830451FCFD2D700BC1892 /* DisplayViewController.swift */; };
+		37B830481FCFDD1800BC1892 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B830471FCFDD1800BC1892 /* GraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		3752CBCC1FCF85980062DA97 /* BaroMyBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaroMyBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3752CBCF1FCF85980062DA97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3752CBD11FCF85980062DA97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3752CBD41FCF85980062DA97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3752CBD61FCF85980062DA97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3752CBD91FCF85980062DA97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		3752CBEB1FCF85990062DA97 /* BaroMyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaroMyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3752CBEF1FCF85990062DA97 /* BaroMyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaroMyBuddyUITests.swift; sourceTree = "<group>"; };
 		3752CBF11FCF85990062DA97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37B830431FCFCBFF00BC1892 /* OpeningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
+		37B830451FCFD2D700BC1892 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		37B830471FCFDD1800BC1892 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				3752CBCF1FCF85980062DA97 /* AppDelegate.swift */,
-				3752CBD11FCF85980062DA97 /* ViewController.swift */,
 				3752CBD31FCF85980062DA97 /* Main.storyboard */,
+				37B830431FCFCBFF00BC1892 /* OpeningViewController.swift */,
+				37B830451FCFD2D700BC1892 /* DisplayViewController.swift */,
+				37B830471FCFDD1800BC1892 /* GraphViewController.swift */,
 				3752CBD61FCF85980062DA97 /* Assets.xcassets */,
 				3752CBD81FCF85980062DA97 /* LaunchScreen.storyboard */,
 				3752CBDB1FCF85980062DA97 /* Info.plist */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3752CBD21FCF85980062DA97 /* ViewController.swift in Sources */,
 				3752CBD01FCF85980062DA97 /* AppDelegate.swift in Sources */,
+				37B830481FCFDD1800BC1892 /* GraphViewController.swift in Sources */,
+				37B830461FCFD2D700BC1892 /* DisplayViewController.swift in Sources */,
+				37B830441FCFCBFF00BC1892 /* OpeningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +513,7 @@
 				3752CBF61FCF85990062DA97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3752CBF71FCF85990062DA97 /* Build configuration list for PBXNativeTarget "BaroMyBuddyTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +522,7 @@
 				3752CBF91FCF85990062DA97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3752CBFA1FCF85990062DA97 /* Build configuration list for PBXNativeTarget "BaroMyBuddyUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +531,7 @@
 				3752CBFC1FCF85990062DA97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
