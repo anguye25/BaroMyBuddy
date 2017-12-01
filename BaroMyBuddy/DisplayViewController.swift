@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreMotion
-import CoreBluetooth
 
 class DisplayViewController: UIViewController {
 
@@ -65,11 +64,11 @@ class DisplayViewController: UIViewController {
                     
              //   } else {
                     
-                    let altitude = altitudeData!.relativeAltitude.floatValue    // Relative altitude in meters
+                    let altitudeMeasured = altitudeData!.relativeAltitude.floatValue    // Relative altitude in meters
                     let pressure = altitudeData!.pressure.floatValue            // Pressure in kilopascals
                     
                     // Update labels, truncate float to two decimal points
-                    self.altitudeLabel.text = String(format: "%.02f", altitude)
+                    self.altitudeLabel.text = String(format: "%.02f", altitudeMeasured)
                     self.pressureLabel.text = String(format: "%.02f", pressure)
                     
       //          }
@@ -89,7 +88,6 @@ class DisplayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -101,3 +99,5 @@ class DisplayViewController: UIViewController {
     */
 
     }}
+
+

@@ -16,6 +16,7 @@
 		37B830441FCFCBFF00BC1892 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B830431FCFCBFF00BC1892 /* OpeningViewController.swift */; };
 		37B830461FCFD2D700BC1892 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B830451FCFD2D700BC1892 /* DisplayViewController.swift */; };
 		37B830481FCFDD1800BC1892 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B830471FCFDD1800BC1892 /* GraphViewController.swift */; };
+		37F622DD1FD0C59D008DC5C1 /* Bean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F622DC1FD0C59D008DC5C1 /* Bean.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		37B830431FCFCBFF00BC1892 /* OpeningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
 		37B830451FCFD2D700BC1892 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		37B830471FCFDD1800BC1892 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		37F622DC1FD0C59D008DC5C1 /* Bean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bean.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				37B830431FCFCBFF00BC1892 /* OpeningViewController.swift */,
 				37B830451FCFD2D700BC1892 /* DisplayViewController.swift */,
 				37B830471FCFDD1800BC1892 /* GraphViewController.swift */,
+				37F622DC1FD0C59D008DC5C1 /* Bean.swift */,
 				3752CBD61FCF85980062DA97 /* Assets.xcassets */,
 				3752CBD81FCF85980062DA97 /* LaunchScreen.storyboard */,
 				3752CBDB1FCF85980062DA97 /* Info.plist */,
@@ -199,6 +202,7 @@
 				TargetAttributes = {
 					3752CBCB1FCF85980062DA97 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G8G5K7P8W2;
 						ProvisioningStyle = Automatic;
 					};
 					3752CBDF1FCF85990062DA97 = {
@@ -266,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3752CBD01FCF85980062DA97 /* AppDelegate.swift in Sources */,
+				37F622DD1FD0C59D008DC5C1 /* Bean.swift in Sources */,
 				37B830481FCFDD1800BC1892 /* GraphViewController.swift in Sources */,
 				37B830461FCFD2D700BC1892 /* DisplayViewController.swift in Sources */,
 				37B830441FCFCBFF00BC1892 /* OpeningViewController.swift in Sources */,
@@ -420,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G8G5K7P8W2;
 				INFOPLIST_FILE = BaroMyBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.BaroMyBuddy;
@@ -432,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G8G5K7P8W2;
 				INFOPLIST_FILE = BaroMyBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.BaroMyBuddy;

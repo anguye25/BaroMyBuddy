@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OpeningViewController: UIViewController {
+class OpeningViewController: UIViewController, UITextFieldDelegate {
     
     var altitude:Double = 0
     
@@ -22,9 +22,15 @@ class OpeningViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        altitudeTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
-        
+    
+    func textFieldShouldReturn(_ altitudeTextField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
