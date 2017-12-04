@@ -10,9 +10,18 @@ import UIKit
 
 class GraphViewController: UIViewController {
     
+    var pressures = [Double]()
+    var altitudes = [Double]()
+    var altitudeGoal:Double = 0
+    var graph:String = ""
+    
     @IBAction func backButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "segueBackDVC", sender: self)
     }
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +35,21 @@ class GraphViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let destVC = segue.destination as! DisplayViewController
+        destVC.pressurePath = pressures
+        destVC.altitudePath = altitudes
+        destVC.graphType = graph
+        destVC.altitude = altitudeGoal
+        
     }
-    */
+    
 
 }

@@ -12,21 +12,32 @@ import CoreMotion
 class DisplayViewController: UIViewController {
 
     var altitude:Double = 0
+    var graphType:String = ""
     
     @IBOutlet weak var altitudeGoal: UILabel!
     @IBOutlet weak var altitudeLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
     
     lazy var altimeter = CMAltimeter()
     
+    var altitudePath = [Double]()
+    var pressurePath = [Double]()
+    
     @IBAction func altitudeGraph(_ sender: UIButton) {
-        print("show altitude graph")
-        self.performSegue(withIdentifier: "segueGVC", sender: self)
+        if altitudePath.contains(where: {$0 >= altitude}) {
+            print("show altitude graph")
+            self.performSegue(withIdentifier: "segueGVC", sender: self)
+            graphType = "Altitude"
+        }
     }
     
     @IBAction func pressureGraph(_ sender: UIButton) {
-        print("show pressure graph")
-        self.performSegue(withIdentifier: "segueGVC", sender: self)
+        if altitudePath.contains(altitude) {
+            print("show pressure graph")
+            self.performSegue(withIdentifier: "segueGVC", sender: self)
+            graphType = "Pressure"
+        }
     }
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -46,7 +57,6 @@ class DisplayViewController: UIViewController {
     func startAltimeter() {
         
         print("Started relative altitude updates.")
-        
         // Check if altimeter feature is available
         if (CMAltimeter.isRelativeAltitudeAvailable()) {
             
@@ -70,7 +80,18 @@ class DisplayViewController: UIViewController {
                     // Update labels, truncate float to two decimal points
                     self.altitudeLabel.text = String(format: "%.02f", altitudeMeasured)
                     self.pressureLabel.text = String(format: "%.02f", pressure)
-                    
+                    // Update pressure and altitude arrays
+                    self.altitudePath.append(Double(altitudeMeasured))
+                    // print(self.altitudePath)
+                    self.pressurePath.append(Double(pressure))
+                    // Give user instruction based on their relative altitude
+                    if self.altitudePath.contains(where: {$0 >= self.altitude}) {
+                        self.instructionLabel.text = "Good Work! You did it!"
+                        print("Altitude Goal Reached")
+                    } else {
+                        self.instructionLabel.text = "Keep Going! You Got This!"
+                    }
+                
       //          }
             })
             
@@ -88,15 +109,25 @@ class DisplayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let destVC = segue.destination as! GraphViewController
+        destVC.pressures = pressurePath
+        destVC.altitudes = altitudePath
+        destVC.graph = graphType
+        destVC.altitudeGoal = altitude
+        
+        let backVC = segue.destination as! OpeningViewController
+        backVC.altitude = altitude
+        
     }
-    */
+
 
     }}
 

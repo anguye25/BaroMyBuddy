@@ -15,7 +15,12 @@ class OpeningViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var altitudeTextField: UITextField!
     
     @IBAction func submitAltitude(_ sender: UIButton) {
+        
+        //userInput = altitudeTextField.text
+        
+        if altitudeTextField.text != "" {
         altitude = Double(altitudeTextField.text!)!
+        }
         print(altitude)
         self.performSegue(withIdentifier: "segueOVC", sender: self)
     }
