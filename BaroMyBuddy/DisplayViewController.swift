@@ -21,6 +21,8 @@ class DisplayViewController: UIViewController {
     
     lazy var altimeter = CMAltimeter()
     
+    var timer = Timer()
+    
     var altitudePath = [Double]()
     var pressurePath = [Double]()
     
@@ -91,6 +93,7 @@ class DisplayViewController: UIViewController {
                     } else {
                         self.instructionLabel.text = "Keep Going! You Got This!"
                     }
+                    print(self.timer)
                 
       //          }
             })
