@@ -13,6 +13,7 @@ class DisplayViewController: UIViewController {
 
     var altitude:Double = 0
     var graphType:String = ""
+    var count:Int = 0
     
     @IBOutlet weak var altitudeGoal: UILabel!
     @IBOutlet weak var altitudeLabel: UILabel!
@@ -21,8 +22,6 @@ class DisplayViewController: UIViewController {
     
     lazy var altimeter = CMAltimeter()
     
-    var timer = Timer()
-    
     var altitudePath = [Double]()
     var pressurePath = [Double]()
     
@@ -30,15 +29,13 @@ class DisplayViewController: UIViewController {
         if altitudePath.contains(where: {$0 >= altitude}) {
             print("show altitude graph")
             self.performSegue(withIdentifier: "segueGVC", sender: self)
-            graphType = "Altitude"
         }
     }
     
     @IBAction func pressureGraph(_ sender: UIButton) {
-        if altitudePath.contains(altitude) {
+        if altitudePath.contains(where: {$0 >= altitude}) {
             print("show pressure graph")
             self.performSegue(withIdentifier: "segueGVC", sender: self)
-            graphType = "Pressure"
         }
     }
     
@@ -56,6 +53,11 @@ class DisplayViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func counter() {
+        count = count+1
+        print(count)
+    }
+    
     func startAltimeter() {
         
         print("Started relative altitude updates.")
@@ -67,15 +69,7 @@ class DisplayViewController: UIViewController {
             // Start altimeter updates, add it to the main queue
             self.altimeter.startRelativeAltitudeUpdates(to: OperationQueue.main, withHandler: { (altitudeData:CMAltitudeData?, error:Error?) in
                 
-             //   if (error != nil) {
-                    
-                    // If there's an error, stop updating and alert the user
-                    
-                    //let alertView = UIAlertView(title: "Error", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
-                 //   alertView.show()
-                    
-             //   } else {
-                    
+
                     let altitudeMeasured = altitudeData!.relativeAltitude.floatValue    // Relative altitude in meters
                     let pressure = altitudeData!.pressure.floatValue            // Pressure in kilopascals
                     
@@ -93,17 +87,11 @@ class DisplayViewController: UIViewController {
                     } else {
                         self.instructionLabel.text = "Keep Going! You Got This!"
                     }
-                    print(self.timer)
+                    //print(self.altitudePath)
+                    //print(self.pressurePath)
                 
-      //          }
+
             })
-            
-     //   } else {
-            
-    //        let alertView = UIAlertView(title: "Error", message: "Barometer not available on this device.", delegate: nil, cancelButtonTitle: "OK")
-      //      alertView.show()
-            
-  //      }
         
     }
 
@@ -113,25 +101,28 @@ class DisplayViewController: UIViewController {
     }
     
 
+    }
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        let destVC = segue.destination as! GraphViewController
+
+        if let destVC = segue.destination as? GraphViewController {
         destVC.pressures = pressurePath
         destVC.altitudes = altitudePath
-        destVC.graph = graphType
         destVC.altitudeGoal = altitude
+        }
+        print("In prepare)")
         
-        let backVC = segue.destination as! OpeningViewController
+        
+        if let backVC = segue.destination as? OpeningViewController {
         backVC.altitude = altitude
-        
+        }
     }
 
-
-    }}
+}
 
 
